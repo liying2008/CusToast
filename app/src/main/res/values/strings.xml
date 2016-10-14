@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CusToastDemo</string>
+    <string name="toast2">Toast 2</string>
+    <string name="toast4">Toast 4</string>
+    <string name="main_text">主标题##</string>
+    <string name="sub_text">次标题##</string>
+</resources>

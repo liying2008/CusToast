@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ddh_cus_bg_light_blue"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="6dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="6dp"
+        android:text="CusToast"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/default_color"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/dLine"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="0.5dp"
+        android:background="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/dSubText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="6dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="6dp"
+        android:text="Subtitle"
+        android:textSize="13sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/default_color"/>
+</LinearLayout>
