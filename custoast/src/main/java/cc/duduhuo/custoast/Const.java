@@ -4,7 +4,7 @@ package cc.duduhuo.custoast;
  * ===========================================================<br>
  * Copyright: Copyright LiYing 2015-2016. All rights reserved.<br>
  * Author: liying<br>
- * Date：2016/10/12 19:47<br>
+ * Date: 2016/10/12 19:47<br>
  * Version: 1.0<br>
  * Description: Custom Toast<br>
  * Remarks: <br>

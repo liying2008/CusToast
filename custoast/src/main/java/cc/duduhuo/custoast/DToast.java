@@ -24,7 +24,7 @@ import cc.duduhuo.custoast.util.DensityUtil;
  * ===========================================================<br>
  * Copyright: Copyright LiYing 2015-2016. All rights reserved.<br>
  * Author: liying<br>
- * Date：2016/10/12 16:15<br>
+ * Date: 2016/10/12 16:15<br>
  * Version: 1.0<br>
  * Description: Custom Toast<br>
  * Remarks: <br>
@@ -452,9 +452,9 @@ public class DToast extends Toast {
      * @see android.view.Gravity
      * @see #getGravity
      *
-     * @param gravity
-     * @param xOffset
-     * @param yOffset
+     * @param gravity gravity
+     * @param xOffset xOffset
+     * @param yOffset yOffset
      * @return current instance.
      */
     public DToast setCusToastGravity(int gravity, int xOffset, int yOffset) {

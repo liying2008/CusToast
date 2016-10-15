@@ -256,15 +256,14 @@ public class CusToast {
     /**
      * Display Toast.
      *
-     * @param text    The resource id of the string resource to use.  Can be formatted text.
+     * @param text      The text to show.  Can be formatted text.
      * @param duration How long to display the message. Either {@link  android.widget.Toast#LENGTH_SHORT} or
      *                 {@link android.widget.Toast#LENGTH_LONG}
-     * @param style the style of CusToast.
      */
-    public static void showToast(@StringRes int text, @Duration int duration, Style style) {
+    public static void showToast(@NonNull CharSequence text, @Duration int duration) {
         clearToast();
         toast = new DToast(app);
-        toast.setView(app, style);
+        toast.setView(app, defStyle);
         toast.setText(text);
         toast.setDuration(duration);
         toast.show();
@@ -274,14 +273,15 @@ public class CusToast {
     /**
      * Display Toast.
      *
-     * @param text      The text to show.  Can be formatted text.
+     * @param text    The resource id of the string resource to use.  Can be formatted text.
      * @param duration How long to display the message. Either {@link  android.widget.Toast#LENGTH_SHORT} or
      *                 {@link android.widget.Toast#LENGTH_LONG}
+     * @param style the style of CusToast.
      */
-    public static void showToast(@NonNull CharSequence text, @Duration int duration) {
+    public static void showToast(@StringRes int text, @Duration int duration, Style style) {
         clearToast();
         toast = new DToast(app);
-        toast.setView(app, defStyle);
+        toast.setView(app, style);
         toast.setText(text);
         toast.setDuration(duration);
         toast.show();

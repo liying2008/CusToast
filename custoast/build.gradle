@@ -31,6 +31,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:support-v4:24.2.1'
     testCompile 'junit:junit:4.12'
 }
 
@@ -96,8 +97,8 @@ if (project.rootProject.findProject('local.properties') != null){
     properties.load(project.rootProject.file('local.properties').newDataInputStream())
 }
 bintray {
-    user = isHasFile ? properties.getProperty("bintray.user") : System.getenv("bintray.user")
-    key = isHasFile ? properties.getProperty("bintray.apikey") : System.getenv("bintray.apikey")
+    user = 'liying2008'
+    key = ''
     configurations = ['archives']
     pkg {
         repo = "CusToast"

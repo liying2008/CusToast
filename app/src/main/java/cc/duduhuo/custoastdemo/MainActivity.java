@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         btnDefault3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CusToast.showToast("Toast 3", Toast.LENGTH_LONG, CusToast.Style.LIGHT_GREEN);
+                CusToast.showToast("Toast 3", Toast.LENGTH_LONG, CusToast.Style.LIGHT_RED);
             }
         });
 
@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
                         .setTextSize(16)
                         .setStyle(CusToast.Style.GRAY_1)
                         .setTextColor(Color.WHITE)
-//                        .setBackground(R.mipmap.ic_launcher)
-//                        .setBackgroundColor(Color.parseColor("#ff3444"))
+                        // .setBackground(R.mipmap.ic_launcher)
+                        // .setBackgroundColor(Color.parseColor("#ff3444"))
                         .setCusToastDuration(Toast.LENGTH_SHORT)
                         .show();
 

@@ -8,7 +8,7 @@ import android.content.Context;
  * Author: liying<br>
  * Date: 2016/6/23 13:18<br>
  * Version: 1.0<br>
- * Description: dp -> sp <br>
+ * Description: dp convert to sp <br>
  * Remarks: Calculation formula pixels = dips * (density / 160)<br>
  * ===========================================================<br>
  */
