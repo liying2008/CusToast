@@ -18,6 +18,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.ref.WeakReference;
+
 import cc.duduhuo.custoast.util.DensityUtil;
 
 /**
@@ -25,14 +27,14 @@ import cc.duduhuo.custoast.util.DensityUtil;
  * Copyright: Copyright LiYing 2015-2016. All rights reserved.<br>
  * Author: liying<br>
  * Date: 2016/10/12 16:15<br>
- * Version: 1.0<br>
+ * Version: 0.2<br>
  * Description: Custom Toast<br>
  * Remarks: <br>
  * ===========================================================<br>
  */
 
 public class DToast extends Toast {
-    private Context context;
+    private WeakReference<Context> context;
     private View dView;
     private TextView dText;
     private TextView dSubText;
@@ -50,7 +52,7 @@ public class DToast extends Toast {
      */
     public DToast(Context context) {
         super(context);
-        this.context = context;
+        this.context = new WeakReference<Context>(context);
     }
 
     /**
@@ -242,7 +244,7 @@ public class DToast extends Toast {
      */
     public DToast setIconSize(int dp) {
         if (dIcon != null) {
-            int width = DensityUtil.dip2px(context, dp);
+            int width = DensityUtil.dip2px(context.get(), dp);
             int height = width;
             dIcon.setLayoutParams(new LinearLayout.LayoutParams(width, height));
         }
@@ -306,71 +308,71 @@ public class DToast extends Toast {
             dView.setBackgroundResource(R.drawable.ddh_cus_bg_def);
             dText.setTextColor(Color.WHITE);
             if (dSubText != null) {
-                dSubText.setTextColor(Color.parseColor("#dddddd"));
+                dSubText.setTextColor(0xffdddddd);
                 dLine.setBackgroundColor(Color.WHITE);
             }
         } else if (style == CusToast.Style.LIGHT_BLUE) {
             dView.setBackgroundResource(R.drawable.ddh_cus_bg_light_blue);
-            dText.setTextColor(Color.parseColor(Const.LIGHT_BLUE_COLOR));
+            dText.setTextColor(Const.LIGHT_BLUE_COLOR);
             if (dSubText != null) {
-                dSubText.setTextColor(Color.parseColor(Const.LIGHT_BLUE_SUB_COLOR));
-                dLine.setBackgroundColor(Color.parseColor(Const.LIGHT_BLUE_COLOR));
+                dSubText.setTextColor(Const.LIGHT_BLUE_SUB_COLOR);
+                dLine.setBackgroundColor(Const.LIGHT_BLUE_COLOR);
             }
         } else if (style == CusToast.Style.BLUE) {
             dView.setBackgroundResource(R.drawable.ddh_cus_bg_blue);
-            dText.setTextColor(Color.parseColor(Const.BLUE_COLOR));
+            dText.setTextColor(Const.BLUE_COLOR);
             if (dSubText != null) {
-                dSubText.setTextColor(Color.parseColor(Const.BLUE_SUB_COLOR));
-                dLine.setBackgroundColor(Color.parseColor(Const.BLUE_COLOR));
+                dSubText.setTextColor(Const.BLUE_SUB_COLOR);
+                dLine.setBackgroundColor(Const.BLUE_COLOR);
             }
         } else if (style == CusToast.Style.RED) {
             dView.setBackgroundResource(R.drawable.ddh_cus_bg_red);
-            dText.setTextColor(Color.parseColor(Const.RED_COLOR));
+            dText.setTextColor(Const.RED_COLOR);
             if (dSubText != null) {
-                dSubText.setTextColor(Color.parseColor(Const.RED_SUB_COLOR));
-                dLine.setBackgroundColor(Color.parseColor(Const.RED_COLOR));
+                dSubText.setTextColor(Const.RED_SUB_COLOR);
+                dLine.setBackgroundColor(Const.RED_COLOR);
             }
         } else if (style == CusToast.Style.LIGHT_RED) {
             dView.setBackgroundResource(R.drawable.ddh_cus_bg_light_red);
-            dText.setTextColor(Color.parseColor(Const.LIGHT_RED_COLOR));
+            dText.setTextColor(Const.LIGHT_RED_COLOR);
             if (dSubText != null) {
-                dSubText.setTextColor(Color.parseColor(Const.LIGHT_RED_SUB_COLOR));
-                dLine.setBackgroundColor(Color.parseColor(Const.LIGHT_RED_COLOR));
+                dSubText.setTextColor(Const.LIGHT_RED_SUB_COLOR);
+                dLine.setBackgroundColor(Const.LIGHT_RED_COLOR);
             }
         } else if (style == CusToast.Style.GREEN) {
             dView.setBackgroundResource(R.drawable.ddh_cus_bg_green);
-            dText.setTextColor(Color.parseColor(Const.GREEN_COLOR));
+            dText.setTextColor(Const.GREEN_COLOR);
             if (dSubText != null) {
-                dSubText.setTextColor(Color.parseColor(Const.GREEN_SUB_COLOR));
-                dLine.setBackgroundColor(Color.parseColor(Const.GREEN_COLOR));
+                dSubText.setTextColor(Const.GREEN_SUB_COLOR);
+                dLine.setBackgroundColor(Const.GREEN_COLOR);
             }
         } else if (style == CusToast.Style.LIGHT_GREEN) {
             dView.setBackgroundResource(R.drawable.ddh_cus_bg_light_green);
-            dText.setTextColor(Color.parseColor(Const.LIGHT_GREEN_COLOR));
+            dText.setTextColor(Const.LIGHT_GREEN_COLOR);
             if (dSubText != null) {
-                dSubText.setTextColor(Color.parseColor(Const.LIGHT_GREEN_SUB_COLOR));
-                dLine.setBackgroundColor(Color.parseColor(Const.LIGHT_GREEN_COLOR));
+                dSubText.setTextColor(Const.LIGHT_GREEN_SUB_COLOR);
+                dLine.setBackgroundColor(Const.LIGHT_GREEN_COLOR);
             }
         } else if (style == CusToast.Style.YELLOW) {
             dView.setBackgroundResource(R.drawable.ddh_cus_bg_yellow);
-            dText.setTextColor(Color.parseColor(Const.YELLOW_COLOR));
+            dText.setTextColor(Const.YELLOW_COLOR);
             if (dSubText != null) {
-                dSubText.setTextColor(Color.parseColor(Const.YELLOW_SUB_COLOR));
-                dLine.setBackgroundColor(Color.parseColor(Const.YELLOW_COLOR));
+                dSubText.setTextColor(Const.YELLOW_SUB_COLOR);
+                dLine.setBackgroundColor(Const.YELLOW_COLOR);
             }
         } else if (style == CusToast.Style.LIGHT_YELLOW) {
             dView.setBackgroundResource(R.drawable.ddh_cus_bg_light_yellow);
-            dText.setTextColor(Color.parseColor(Const.LIGHT_YELLOW_COLOR));
+            dText.setTextColor(Const.LIGHT_YELLOW_COLOR);
             if (dSubText != null) {
-                dSubText.setTextColor(Color.parseColor(Const.LIGHT_YELLOW_SUB_COLOR));
-                dLine.setBackgroundColor(Color.parseColor(Const.LIGHT_YELLOW_COLOR));
+                dSubText.setTextColor(Const.LIGHT_YELLOW_SUB_COLOR);
+                dLine.setBackgroundColor(Const.LIGHT_YELLOW_COLOR);
             }
         } else if (style == CusToast.Style.GRAY_1) {
             dView.setBackgroundResource(R.drawable.ddh_cus_bg_gray_1);
-            dText.setTextColor(Color.parseColor(Const.GRAY_COLOR_1));
+            dText.setTextColor(Const.GRAY_COLOR_1);
             if (dSubText != null) {
-                dSubText.setTextColor(Color.parseColor(Const.GRAY_SUB_COLOR_1));
-                dLine.setBackgroundColor(Color.parseColor(Const.GRAY_COLOR_1));
+                dSubText.setTextColor(Const.GRAY_SUB_COLOR_1);
+                dLine.setBackgroundColor(Const.GRAY_COLOR_1);
             }
         }
         return this;

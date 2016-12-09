@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                         .setStyle(CusToast.Style.GRAY_1)
                         .setTextColor(Color.WHITE)
                         // .setBackground(R.mipmap.ic_launcher)
-                        // .setBackgroundColor(Color.parseColor("#ff3444"))
+                        // .setBackgroundColor(0xffff3444)
                         .setCusToastDuration(Toast.LENGTH_SHORT)
                         .show();
 
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 CusToast.getToastWithIcon(R.string.toast2, R.mipmap.ic_launcher)
                         .setCusToastText("带图片的Toast")
                         .setStyle(CusToast.Style.LIGHT_BLUE)
-                        .setTextColor(Color.parseColor("#67babf"))
+                        .setTextColor(0xff67babf)
                         .setTextSize(20)
                         .setIconSize(40)
                         .setCusToastDuration(Toast.LENGTH_LONG)

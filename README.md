@@ -2,13 +2,13 @@ CusToast
 ========
 > 自定义显示样式的全局静态Toast，具有即时显示的特性。  
 
+> [Download Demo Apk](https://github.com/liying2008/CusToast/releases/download/v0.2/custoast_demo_v0.2.apk)
+
 引入(Download)
 ----
 ## Use Gradle  
 ```gradle  
-dependencies {
-  compile 'cc.duduhuo.custoast:custoast:0.1'
-}
+compile 'cc.duduhuo.custoast:custoast:0.2'
 ```
 
 ## Or Maven  
@@ -16,15 +16,8 @@ dependencies {
 <dependency>
   <groupId>cc.duduhuo.custoast</groupId>
   <artifactId>custoast</artifactId>
-  <version>0.1</version>
+  <version>0.2</version>
   <type>pom</type>
-</dependency>
-```
-
-## Or Ivy  
-```xml  
-<dependency org='cc.duduhuo.custoast' name='custoast' rev='0.1'>
-  <artifact name='$AID' ext='pom'></artifact>
 </dependency>
 ```
 
@@ -70,7 +63,7 @@ toast.setCusToastGravity(Gravity.CENTER, 0, 0)
         .setStyle(CusToast.Style.GRAY_1)
         .setTextColor(Color.WHITE)
         // .setBackground(R.mipmap.ic_launcher)
-        // .setBackgroundColor(Color.parseColor("#ff3444"))
+        // .setBackgroundColor(0xffff3444)
         .setCusToastDuration(Toast.LENGTH_SHORT)
         .show();
 ```
@@ -99,7 +92,7 @@ CusToast.getToastWithIcon("CusToast", R.mipmap.ic_launcher).show();
 CusToast.getToastWithIcon(R.string.toast2, R.mipmap.ic_launcher)
         .setCusToastText("带图片的Toast")
         .setStyle(CusToast.Style.LIGHT_BLUE)
-        .setTextColor(Color.parseColor("#67babf"))
+        .setTextColor(0xff67babf)
         .setTextSize(20)
         .setIconSize(40)
         .setCusToastDuration(Toast.LENGTH_LONG)
@@ -130,7 +123,7 @@ CusToast.getToastWithIcon(R.string.toast2, R.mipmap.ic_launcher)
 | getToastWithSub(@NonNull CharSequence, @NonNull CharSequence) | DToast | 得到一个带次标题的DToast的实例，需要调用<code>show()</code>方法才可以显示
 | getToastWithIcon(@NonNull CharSequence, @DrawableRes int) | DToast | 得到一个带图标的DToast的实例，需要调用<code>show()</code>方法才可以显示
 | getToastWithIcon(@StringRes int, @DrawableRes int) | DToast | 得到一个带图标的DToast的实例，需要调用<code>show()</code>方法才可以显示
-| getApplication() | Application | 得到应用Application类实例
+| ~~getApplication()~~ | Application | 得到应用Application类实例
 
 ### DToast类的方法说明  
 | 方法名 | 返回值类型 | 备注
@@ -183,12 +176,13 @@ CusToast.getToastWithIcon(R.string.toast2, R.mipmap.ic_launcher)
 
 作者(Author)
 ----
-李颖 ([@独毒火][2])  
-[liruoer2008@yeah.net][3]
+李颖
+新浪微博：[@独毒火][2]
+邮箱：[liruoer2008@yeah.net][3]
 
 日期(Date)
 ----
-2016-10-15  
+2016-12-09
 
 License
 ----

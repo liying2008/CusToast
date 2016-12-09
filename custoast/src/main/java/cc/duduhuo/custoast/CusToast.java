@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.lang.ref.WeakReference;
 
 import static android.widget.Toast.LENGTH_LONG;
 import static android.widget.Toast.LENGTH_SHORT;
@@ -19,7 +20,7 @@ import static android.widget.Toast.LENGTH_SHORT;
  * Copyright: Copyright LiYing 2015-2016. All rights reserved.<br>
  * Author: liying<br>
  * Date: 2016/10/12 16:10<br>
- * Version: 1.0<br>
+ * Version: 0.2<br>
  * Description: Custom Toast<br>
  * Remarks: <br>
  * ===========================================================<br>
@@ -28,8 +29,8 @@ import static android.widget.Toast.LENGTH_SHORT;
 public class CusToast {
 
     private static DToast toast = null;  // Global Toast
-    static final String TAG = "CusToast";
-    private static Application app;
+    private static final String TAG = "CusToast";
+    private static WeakReference<Application> app;
     private static Style defStyle = Style.DEFAULT;
 
 
@@ -40,7 +41,7 @@ public class CusToast {
      *                    <b>Do not forget to configure the android: name attribute under the application node of the AndroidManifest file.</b>
      */
     public static void init(Application application) {
-        app = application;
+        app = new WeakReference<Application>(application);
     }
 
     /**
@@ -51,7 +52,7 @@ public class CusToast {
      * @param style the default style of CusToast.
      */
     public static void init(Application application, Style style) {
-        app = application;
+        app = new WeakReference<Application>(application);
         defStyle = style;
     }
 
@@ -78,8 +79,8 @@ public class CusToast {
      */
     public static void showToast(@StringRes int text) {
         clearToast();
-        toast = new DToast(app);
-        toast.setView(app, defStyle);
+        toast = new DToast(app.get());
+        toast.setView(app.get(), defStyle);
         toast.setText(text);
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.show();
@@ -92,8 +93,8 @@ public class CusToast {
      */
     public static void showToast(@NonNull CharSequence text) {
         clearToast();
-        toast = new DToast(app);
-        toast.setView(app, defStyle);
+        toast = new DToast(app.get());
+        toast.setView(app.get(), defStyle);
         toast.setText(text);
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.show();
@@ -109,8 +110,8 @@ public class CusToast {
      */
     public static DToast getToastWithSub(@StringRes int mainText, @StringRes int subText) {
         clearToast();
-        toast = new DToast(app);
-        toast.setSubView(app, defStyle);
+        toast = new DToast(app.get());
+        toast.setSubView(app.get(), defStyle);
         toast.setText(mainText);
         toast.setSubText(subText);
         toast.setDuration(Toast.LENGTH_SHORT);
@@ -127,8 +128,8 @@ public class CusToast {
      */
     public static DToast getToastWithSub(@NonNull CharSequence mainText, @StringRes int subText) {
         clearToast();
-        toast = new DToast(app);
-        toast.setSubView(app, defStyle);
+        toast = new DToast(app.get());
+        toast.setSubView(app.get(), defStyle);
         toast.setText(mainText);
         toast.setSubText(subText);
         toast.setDuration(Toast.LENGTH_SHORT);
@@ -145,8 +146,8 @@ public class CusToast {
      */
     public static DToast getToastWithSub(@StringRes int mainText, @NonNull CharSequence subText) {
         clearToast();
-        toast = new DToast(app);
-        toast.setSubView(app, defStyle);
+        toast = new DToast(app.get());
+        toast.setSubView(app.get(), defStyle);
         toast.setText(mainText);
         toast.setSubText(subText);
         toast.setDuration(Toast.LENGTH_SHORT);
@@ -163,8 +164,8 @@ public class CusToast {
      */
     public static DToast getToastWithSub(@NonNull CharSequence mainText, @NonNull CharSequence subText) {
         clearToast();
-        toast = new DToast(app);
-        toast.setSubView(app, defStyle);
+        toast = new DToast(app.get());
+        toast.setSubView(app.get(), defStyle);
         toast.setText(mainText);
         toast.setSubText(subText);
         toast.setDuration(Toast.LENGTH_SHORT);
@@ -181,8 +182,8 @@ public class CusToast {
      */
     public static DToast getToastWithIcon(@NonNull CharSequence text, @DrawableRes int icon) {
         clearToast();
-        toast = new DToast(app);
-        toast.setIconView(app, defStyle);
+        toast = new DToast(app.get());
+        toast.setIconView(app.get(), defStyle);
         toast.setText(text);
         toast.setIcon(icon);
         toast.setDuration(Toast.LENGTH_SHORT);
@@ -199,8 +200,8 @@ public class CusToast {
      */
     public static DToast getToastWithIcon(@StringRes int text, @DrawableRes int icon) {
         clearToast();
-        toast = new DToast(app);
-        toast.setIconView(app, defStyle);
+        toast = new DToast(app.get());
+        toast.setIconView(app.get(), defStyle);
         toast.setText(text);
         toast.setIcon(icon);
         toast.setDuration(Toast.LENGTH_SHORT);
@@ -215,8 +216,8 @@ public class CusToast {
      */
     public static void showToast(@StringRes int text, Style style) {
         clearToast();
-        toast = new DToast(app);
-        toast.setView(app, style);
+        toast = new DToast(app.get());
+        toast.setView(app.get(), style);
         toast.setText(text);
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.show();
@@ -230,8 +231,8 @@ public class CusToast {
      */
     public static void showToast(@NonNull CharSequence text, Style style) {
         clearToast();
-        toast = new DToast(app);
-        toast.setView(app, style);
+        toast = new DToast(app.get());
+        toast.setView(app.get(), style);
         toast.setText(text);
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.show();
@@ -246,8 +247,8 @@ public class CusToast {
      */
     public static void showToast(@StringRes int text, @Duration int duration) {
         clearToast();
-        toast = new DToast(app);
-        toast.setView(app, defStyle);
+        toast = new DToast(app.get());
+        toast.setView(app.get(), defStyle);
         toast.setText(text);
         toast.setDuration(duration);
         toast.show();
@@ -262,8 +263,8 @@ public class CusToast {
      */
     public static void showToast(@NonNull CharSequence text, @Duration int duration) {
         clearToast();
-        toast = new DToast(app);
-        toast.setView(app, defStyle);
+        toast = new DToast(app.get());
+        toast.setView(app.get(), defStyle);
         toast.setText(text);
         toast.setDuration(duration);
         toast.show();
@@ -280,8 +281,8 @@ public class CusToast {
      */
     public static void showToast(@StringRes int text, @Duration int duration, Style style) {
         clearToast();
-        toast = new DToast(app);
-        toast.setView(app, style);
+        toast = new DToast(app.get());
+        toast.setView(app.get(), style);
         toast.setText(text);
         toast.setDuration(duration);
         toast.show();
@@ -297,8 +298,8 @@ public class CusToast {
      */
     public static void showToast(@NonNull CharSequence text, @Duration int duration, Style style) {
         clearToast();
-        toast = new DToast(app);
-        toast.setView(app, style);
+        toast = new DToast(app.get());
+        toast.setView(app.get(), style);
         toast.setText(text);
         toast.setDuration(duration);
         toast.show();
@@ -313,8 +314,8 @@ public class CusToast {
      */
     public static DToast getToast(@NonNull CharSequence text) {
         clearToast();
-        toast = new DToast(app);
-        toast.setView(app, defStyle);
+        toast = new DToast(app.get());
+        toast.setView(app.get(), defStyle);
         toast.setText(text);
         toast.setDuration(Toast.LENGTH_SHORT);
         return toast;
@@ -329,8 +330,8 @@ public class CusToast {
      */
     public static DToast getToast(@StringRes int text) {
         clearToast();
-        toast = new DToast(app);
-        toast.setView(app, defStyle);
+        toast = new DToast(app.get());
+        toast.setView(app.get(), defStyle);
         toast.setText(text);
         toast.setDuration(Toast.LENGTH_SHORT);
         return toast;
@@ -347,12 +348,13 @@ public class CusToast {
     }
 
     /**
-     * Get a global Application
+     * Get a global appication
      *
      * @return global Application
      */
+    @Deprecated
     public static Application getApplication() {
-        return app;
+        return app.get();
     }
 
     /**
