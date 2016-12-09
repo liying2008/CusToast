@@ -176,8 +176,8 @@ CusToast.getToastWithIcon(R.string.toast2, R.mipmap.ic_launcher)
 
 作者(Author)
 ----
-李颖
-新浪微博：[@独毒火][2]
+李颖  
+新浪微博：[@独毒火][2]  
 邮箱：[liruoer2008@yeah.net][3]
 
 日期(Date)
